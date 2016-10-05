@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/login.do" location="90,45" dimension="287,116" />
+  <StrutsActivity path="/register.do" location="90,225" dimension="307,116" />
+  <StrutsActivity path="/mymusic.do" location="90,390" dimension="312,116" />
+  <StrutsActivity path="/playMymusic.do" location="870,285" dimension="340,116" />
+  <StrutsActivity path="/musiclist.do" location="135,570" dimension="310,116" />
+  <StrutsActivity path="/listmusics.do" location="950,650" dimension="320,116" />
+  <StrutsActivity path="/singer.do" location="350,750" dimension="293,116" />
+  <StrutsActivity path="/singermusics.do" location="50,950" dimension="342,116" />
+  <StrutsActivity path="/Main.jsp" location="950,50" dimension="104,56" />
+  <StrutsActivity path="/Login.jsp" location="650,50" dimension="109,56" />
+  <StrutsActivity path="/Register.jsp" location="650,250" dimension="129,56" />
+  <StrutsActivity path="/Mymusic.jsp" location="570,420" dimension="133,56" />
+  <StrutsActivity path="/Play.jsp" location="990,480" dimension="97,56" />
+  <StrutsActivity path="/MusicLists.jsp" location="650,550" dimension="143,56" />
+  <StrutsActivity path="/Playlist.jsp" location="50,750" dimension="118,56" />
+  <StrutsActivity path="/SingerList.jsp" location="950,850" dimension="140,56" />
+  <StrutsActivity path="/Playsinger.jsp" location="650,950" dimension="142,56" />
+  <StrutsTransition id="/musiclist.do,OK,/MusicLists.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="445,585" />
+      <AbsolutePoint location="650,585" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/listmusics.do,OK,/Playlist.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="950,708" />
+      <AbsolutePoint location="109,708" />
+      <AbsolutePoint location="109,750" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,OK,/Main.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="377,121" />
+      <AbsolutePoint location="1002,121" />
+      <AbsolutePoint location="1002,106" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/singermusics.do,OK,/Playsinger.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="392,978" />
+      <AbsolutePoint location="650,978" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/register.do,ERR,/Register.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="397,278" />
+      <AbsolutePoint location="650,278" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/register.do,OK,/Login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="397,235" />
+      <AbsolutePoint location="704,235" />
+      <AbsolutePoint location="704,106" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,ERR,/Login.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="377,78" />
+      <AbsolutePoint location="650,78" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/singer.do,OK,/SingerList.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="643,851" />
+      <AbsolutePoint location="950,851" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/playMymusic.do,OK,/Play.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1038,401" />
+      <AbsolutePoint location="1038,480" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/mymusic.do,OK,/Mymusic.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="402,448" />
+      <AbsolutePoint location="570,448" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

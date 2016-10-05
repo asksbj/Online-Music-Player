@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd" xmlns:tx="http://www.springframework.org/schema/tx">
+
+	<bean id="test1" class="com.ssh.service.TestService">
+		<property name="name" value="Test1"/>
+	
+	</bean>
+
+	<bean id="dataSource"
+		class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+		<property name="url" value="jdbc:mysql://localhost:3306/ssh"></property>
+		<property name="username" value="root"></property>
+		<property name="password" value="1008319asksbj"></property>
+		<property name="initialSize" value="3"></property>
+		<property name="maxActive" value="500"></property>
+		<property name="maxIdle" value="2"></property>
+		<property name="minIdle" value="1"></property>
+	</bean> 
+	
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">
+					org.hibernate.dialect.MySQLDialect
+				</prop>
+				<prop key="hibernate.show_sql">
+					true
+				</prop>
+			</props>
+		</property>
+		<property name="mappingResources">
+			<list>
+				<value>com/ssh/domain/Users.hbm.xml</value>
+				<value>com/ssh/domain/Singer.hbm.xml</value>
+				<value>com/ssh/domain/Musics.hbm.xml</value>
+				<value>com/ssh/domain/Musiclist.hbm.xml</value>
+				<value>com/ssh/domain/Items.hbm.xml</value>
+				<value>com/ssh/domain/Mymusics.hbm.xml</value></list>
+		</property>
+	</bean>
+	
+	<bean id="transactionManager"
+		class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="userservice1" class="com.ssh.impl.UserService"> 
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="musicservice1" class="com.ssh.impl.MusicService"> 
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="musiclistservice1" class="com.ssh.impl.MusicListService"> 
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="singerservice1" class="com.ssh.impl.SingerService"> 
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="test" class="com.ssh.test.test"> 
+		<property name="sessionfactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<bean id="pageservice1" class="com.ssh.impl.PageService"> 
+	</bean>
+	
+	<tx:annotation-driven transaction-manager="transactionManager" />
+</beans>

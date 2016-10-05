@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.3//EN" "http://struts.apache.org/dtds/struts-config_1_3.dtd">
+
+<struts-config>
+  <form-beans >
+    <form-bean name="LoginForm" type="com.ssh.web.form.LoginForm" />
+    <form-bean name="registerForm" type="com.ssh.web.form.RegisterForm" />
+    <form-bean name="myMusicForm" type="com.ssh.web.form.MyMusicForm" />
+    <form-bean name="playMymusicForm" type="com.ssh.web.form.PlayMymusicForm" />
+    <form-bean name="listMusicsForm" type="com.ssh.web.form.ListMusicsForm" />
+    <form-bean name="singerMusicsForm" type="com.ssh.web.form.SingerMusicsForm" />
+
+  </form-beans>
+
+  <global-exceptions />
+  <global-forwards >
+    
+
+  </global-forwards>
+
+  <action-mappings >
+    <action
+      attribute="LoginForm"
+      name="LoginForm"
+      path="/login"
+      scope="request"
+      type="com.ssh.web.action.LoginAction"
+      cancellable="true">
+      <forward name="OK" path="/Main.jsp" />
+      <forward name="ERR" path="/Login.jsp" />
+    </action>
+    <action
+      attribute="registerForm"
+      name="registerForm"
+      path="/register"
+      scope="request"
+      type="com.ssh.web.action.RegisterAction"
+      cancellable="true">
+      <forward name="OK" path="/Login.jsp" />
+      <forward name="ERR" path="/Register.jsp" />
+    </action>
+    <action
+      attribute="myMusicForm"
+      name="myMusicForm"
+      path="/mymusic"
+      scope="request"
+      type="com.ssh.web.action.MyMusicAction"
+      cancellable="true">
+      <forward name="OK" path="/Mymusic.jsp" />
+    </action>
+    <action
+      attribute="playMymusicForm"
+      name="playMymusicForm"
+      path="/playMymusic"
+      scope="request"
+      type="com.ssh.web.action.PlayMymusicAction"
+      cancellable="true">
+      <forward name="OK" path="/Play.jsp" />
+    </action>
+    <action
+      path="/musiclist"
+      type="com.ssh.web.action.MusiclistAction"
+      cancellable="true">
+      <forward name="OK" path="/MusicLists.jsp" />
+    </action>
+    <action
+      attribute="listMusicsForm"
+      name="listMusicsForm"
+      path="/listmusics"
+      scope="request"
+      type="com.ssh.web.action.ListmusicsAction"
+      cancellable="true">
+      <forward name="OK" path="/Playlist.jsp" />
+    </action>
+    <action
+      path="/singer"
+      type="com.ssh.web.action.SingerAction"
+      cancellable="true">
+      <forward name="OK" path="/SingerList.jsp" />
+    </action>
+    <action
+      attribute="singerMusicsForm"
+      name="singerMusicsForm"
+      path="/singermusics"
+      scope="request"
+      type="com.ssh.web.action.SingermusicsAction"
+      cancellable="true">
+      <forward name="OK" path="/Playsinger.jsp" />
+    </action>
+    
+    
+
+
+  </action-mappings>
+
+  <message-resources parameter="com.ssh.action.ApplicationResources" />
+</struts-config>
+
